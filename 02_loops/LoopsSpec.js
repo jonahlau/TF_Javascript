@@ -95,8 +95,7 @@ describe("Loops", function() {
 				expect(paramify(hash)).toEqual("a=1&b=2&c=3&d=4&e=5&f=6");
 			});
 			
-			// Advanced. Change "xit" to "it" to run this test.
-			xit("skips properties of the object's prototype", function() {
+			it("skips properties of the object's prototype", function() {
 				var Alphabet = function() { 
 					this.a = 1;
 					this.b = 2;
@@ -105,19 +104,37 @@ describe("Loops", function() {
 				expect(paramify(new Alphabet())).toEqual("a=1&b=2");
 			});
 		});
-  });	
-	
-	// Test-Driving Bonus: once the above tests pass, 
-  // write tests and code for the following.
-  // See http://en.wikipedia.org/wiki/Factorial
-  // You can either use iteration (loops) or recursion. 
-  // (Recursion is easier, but might blow your mind.)
-  describe("factorial", function() {
-    it("computes the factorial of 0");
-    it("computes the factorial of 1");
-    it("computes the factorial of 2");
-    it("computes the factorial of 5");
-    it("computes the factorial of 10");
-  });
-  
+  });	  
 });
+	
+
+describe("factorial", function() {
+  it("computes the factorial of 0", function() {
+  	expect(factorial(0)).toEqual(1);
+  });
+
+  it("computes the factorial of 5", function() {
+  	expect(factorial(5)).toEqual(120);
+
+  });
+
+  it("computes the factorial of 10", function() {
+  	expect(factorial(10)).toEqual(3628800);
+  });
+});
+
+
+describe("The arguments array", function() {
+	it("allows you to call a function with arguments like normal", function() {
+		var result = concat_string("David", " ", "Yang");
+		expect(result).toEqual("David Yang");
+	});
+
+	it("allows you to call a function with as many arguments as you want", function() {
+		var result = concat_string("This", " ", "should", " ", "be done with join");
+		expect(result).toEqual("This should be done with join");
+	});
+});
+
+
+
