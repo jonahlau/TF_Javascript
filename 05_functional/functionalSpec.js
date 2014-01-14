@@ -133,7 +133,6 @@ describe("every", function() {
 });
 
 describe("any", function() {
-  var nativeSome = Array.prototype.some;
   var isEven = function(number){
     return number % 2 === 0;
   };
