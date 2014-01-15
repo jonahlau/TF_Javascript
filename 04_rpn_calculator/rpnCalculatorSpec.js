@@ -1,5 +1,11 @@
 // See http://en.wikipedia.org/wiki/Reverse_Polish_notation
 describe("Calculator using reverse polish notation", function() {
+  var calculator;
+  
+  beforeEach(function(){ 
+    calculator = new Calculator();
+  });
+  
   it("adds two numbers", function() {
     calculator.push(2);
     calculator.push(3);
